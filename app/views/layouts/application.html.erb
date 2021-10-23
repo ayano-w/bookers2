@@ -5,6 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!--<script src="https://kit.fontawesome.com/*******.js" crossorigin="anonymous"></script>-->
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -26,13 +28,38 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                  <li>
-                  <a class="fas fa-home nav-link text-light" href="/"> Home</a>
+                    <a class="fas fa-home nav-link text-light" href="/users/"> Home</a>
+                 </li>
+                 <li>
+                    <a class="fas fa-home nav-link text-light" href="/"> Users</a>
+                 </li>
+                 <li>
+                    <a class="fas fa-home nav-link text-light" href="/"> Books</a>
+                 </li>
+                 <li>
+                    <a class="fas fa-home nav-link text-light" href="/"> Log out</a>
                  </li>
 
+
               <% else %>
+                 <li>
+                    <a class="fas fa-home nav-link text-light" href="/"> Home</a>
+                 </li>
+                 <li class="nav-link text-light">
+                    <%= link_to homes_about_path, class:"text-light" do %>
+                    <span><i class="fas fa-home"></i> About</span>
+                    <% end %>
+                 </li>
+                 <!--<li>-->
+                 <!--    <%= link_to homes_about_path, class:"nav-link text-light" %>-->
+                 <!--</li>-->
+                 <li>
+                    <a class="fas fa-user-plus nav-link text-light" href="/users/sign_up"> Sign up</a>
+                 </li>
                   <li>
-                    <%= link_to "About", homes_about_path, class:'nav-link text-light' %> なんか書き方が違うんだろうな。
-                  </li>
+                    <a class="fas fa-sign-in alt nav-link text-light" href="/users/sign_in"> Log in</a>
+                 </li>
+  
 
               <% end %>
 
