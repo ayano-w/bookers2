@@ -12,10 +12,10 @@
   </head>
 
   <body>
-    <header class="bg-dark text-white">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
         <div class="container">
-          <a class="navbar-brand py-5" href="/">
+          <a class="navbar-brand" href="/">
             <span>Bookers</span>
           </a>
 
@@ -52,7 +52,7 @@
                  <li>
                     <%= link_to " Log in", new_user_session_path, class:"fas fa-sign-in-alt nav-link text-light" %>
                  </li>
-  
+
               <% end %>
 
 
@@ -64,6 +64,9 @@
 
       </nav>
     </header>
+
+    <%= render 'layouts/flash' %>
+
     <main class="mb-auto">
     <%= yield %>
     </main>
