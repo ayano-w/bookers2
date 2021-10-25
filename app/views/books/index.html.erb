@@ -1,12 +1,13 @@
 <div class="container px-5 px-sm-0">
 
-  <% if @book.errors.any? %>
-    <h2><%= @book.errors.count %> error prohibited this obj from being saved:</h2>
-    <% @book.errors.full_messages.each do |message| %>
-      <%= message %>
+  <div class="error-explanation">
+    <% if @book.errors.any? %>
+      <h2><%= @book.errors.count %> error prohibited this obj from being saved:</h2>
+      <% @book.errors.full_messages.each do |message| %>
+       <ul><li><%= message %></li></ul>
+      <% end %>
     <% end %>
-  <% end %>
-
+  </div>
 
   <div class="row">
 
